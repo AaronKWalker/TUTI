@@ -86,7 +86,7 @@ div_padding = urwid.Padding(div_map, left=10, right=3)
 
 main_pile = urwid.Pile([padding1, div_padding, padding2])
 main_filler = urwid.Filler(main_pile, valign='top', top=1)
-main_linebox = urwid.LineBox(main_filler, 'TEST 01', title_align='left', tlcorner='■', trcorner='■', blcorner='■',brcorner='■', tline='═', bline='═', lline='║', rline='║')
+main_linebox = urwid.LineBox(main_filler, 'TEST 01', title_align='left', tlcorner='╔', trcorner='╗', blcorner='╚',brcorner='╝', tline='═', bline='═', lline='║', rline='║')
 main_map = urwid.AttrMap(main_linebox, 'bg')
 
 loop = urwid.MainLoop(main_map, palette2, unhandled_input=exit_on_q)
