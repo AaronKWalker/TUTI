@@ -78,7 +78,7 @@ spades = {
 }
 
 def card_text(card):
-    return card['value'] + '\n' + card['suit']
+    return card['value'] + card['suit']
 
 a_h = card_text(hearts['ace'])
 a_s = card_text(spades['ace'])
@@ -100,10 +100,10 @@ padding2 = urwid.Padding(txtmap2)
 padding3 = urwid.Padding(txtmap3)
 padding4 = urwid.Padding(txtmap4)
 
-filler1 = urwid.Filler(padding1)
-filler2 = urwid.Filler(padding2)
-filler3 = urwid.Filler(padding3)
-filler4 = urwid.Filler(padding4)
+filler1 = urwid.Filler(padding1, valign='top')
+filler2 = urwid.Filler(padding2, valign='top')
+filler3 = urwid.Filler(padding3, valign='top')
+filler4 = urwid.Filler(padding4, valign='top')
 
 linebox1 = urwid.LineBox(filler1, tlcorner='╔', trcorner='╗', blcorner='╚', brcorner='╝', tline='═', bline='═', lline='║', rline='║')
 linebox2 = urwid.LineBox(filler2, tlcorner='╔', trcorner='╗', blcorner='╚', brcorner='╝', tline='═', bline='═', lline='║', rline='║')
@@ -115,10 +115,10 @@ lineboxmap2 = urwid.AttrMap(linebox2, 'card_sc')
 lineboxmap3 = urwid.AttrMap(linebox3, 'card_hd')
 lineboxmap4 = urwid.AttrMap(linebox4, 'card_sc')
 
-borderpadding1 = urwid.Padding(lineboxmap1, width=7, left=1, right=1)
-borderpadding2 = urwid.Padding(lineboxmap2, width=7, left=1, right=1)
-borderpadding3 = urwid.Padding(lineboxmap3, width=7, left=1, right=1)
-borderpadding4 = urwid.Padding(lineboxmap4, width=7, left=1, right=1)
+borderpadding1 = urwid.Padding(lineboxmap1, width=15, left=2, right=2)
+borderpadding2 = urwid.Padding(lineboxmap2, width=15, left=2, right=2)
+borderpadding3 = urwid.Padding(lineboxmap3, width=15, left=2, right=2)
+borderpadding4 = urwid.Padding(lineboxmap4, width=15, left=2, right=2)
 
 borderfiller1 = urwid.Filler(borderpadding1, height=15)
 borderfiller2 = urwid.Filler(borderpadding2, height=15)
