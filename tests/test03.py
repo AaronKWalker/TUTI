@@ -125,7 +125,7 @@ borderfiller2 = urwid.Filler(borderpadding2)
 borderfiller3 = urwid.Filler(borderpadding3)
 borderfiller4 = urwid.Filler(borderpadding4)
 
-column1 = urwid.Columns([borderfiller1, borderfiller2, bord
+column1 = urwid.Columns([borderfiller1, borderfiller2, borderfiller3, borderfiller4])
 
 main_map = urwid.AttrMap(column1, 'background')
 
