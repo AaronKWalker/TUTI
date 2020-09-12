@@ -120,10 +120,10 @@ borderpadding2 = urwid.Padding(lineboxmap2)
 borderpadding3 = urwid.Padding(lineboxmap3)
 borderpadding4 = urwid.Padding(lineboxmap4)
 
-borderfiller1 = urwid.Filler(borderpadding1)
-borderfiller2 = urwid.Filler(borderpadding2)
-borderfiller3 = urwid.Filler(borderpadding3)
-borderfiller4 = urwid.Filler(borderpadding4)
+borderfiller1 = urwid.Filler(borderpadding1, height=3)
+borderfiller2 = urwid.Filler(borderpadding2, height=3)
+borderfiller3 = urwid.Filler(borderpadding3, height=3)
+borderfiller4 = urwid.Filler(borderpadding4, height=3)
 
 column1 = urwid.Columns([borderfiller1, borderfiller2, borderfiller3, borderfiller4])
 
