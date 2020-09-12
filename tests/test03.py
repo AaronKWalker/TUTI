@@ -115,17 +115,17 @@ lineboxmap2 = urwid.AttrMap(linebox2, 'card_sc')
 lineboxmap3 = urwid.AttrMap(linebox3, 'card_hd')
 lineboxmap4 = urwid.AttrMap(linebox4, 'card_sc')
 
-borderpadding1 = urwid.Padding(lineboxmap1, width=1, left=1, right=1)
-borderpadding2 = urwid.Padding(lineboxmap2, width=1, left=1, right=1)
-borderpadding3 = urwid.Padding(lineboxmap3, width=1, left=1, right=1)
-borderpadding4 = urwid.Padding(lineboxmap4, width=1, left=1, right=1)
+borderpadding1 = urwid.Padding(lineboxmap1)
+borderpadding2 = urwid.Padding(lineboxmap2)
+borderpadding3 = urwid.Padding(lineboxmap3)
+borderpadding4 = urwid.Padding(lineboxmap4)
 
-borderfiller1 = urwid.Filler(borderpadding1, height=1, top=1, bottom=1)
-borderfiller2 = urwid.Filler(borderpadding2, height=1, top=1, bottom=1)
-borderfiller3 = urwid.Filler(borderpadding3, height=1, top=1, bottom=1)
-borderfiller4 = urwid.Filler(borderpadding4, height=1, top=1, bottom=1)
+borderfiller1 = urwid.Filler(borderpadding1)
+borderfiller2 = urwid.Filler(borderpadding2)
+borderfiller3 = urwid.Filler(borderpadding3)
+borderfiller4 = urwid.Filler(borderpadding4)
 
-column1 = urwid.Columns([borderfiller1, borderfiller2, borderfiller3, borderfiller4])
+column1 = urwid.Columns([borderfiller1, borderfiller2, bord
 
 main_map = urwid.AttrMap(column1, 'background')
 
