@@ -10,8 +10,8 @@ palette = [
     ('background', 'white', 'black'),
     ('card_hd', 'light red', 'light gray'),
     ('card_sc', 'black', 'light gray'),
-    ('card_border_hd', 'light red', 'light gray'),
-    ('card_border_sc', 'black', 'light gray')
+    ('card_border_hd', 'light red', 'dark blue'),
+    ('card_border_sc', 'black', 'dark blue')
 ]
 
 # palette = [
@@ -98,30 +98,35 @@ txtbox2 = urwid.Text(a_s)
 txtbox3 = urwid.Text(a_d)
 txtbox4 = urwid.Text(a_c)
 
-txtmap1 = urwid.AttrMap(txtbox1, 'card_hd')
-txtmap2 = urwid.AttrMap(txtbox2, 'card_sc')
-txtmap3 = urwid.AttrMap(txtbox3, 'card_hd')
-txtmap4 = urwid.AttrMap(txtbox4, 'card_sc')
+# txtmap1 = urwid.AttrMap(txtbox1, 'card_hd')
+# txtmap2 = urwid.AttrMap(txtbox2, 'card_sc')
+# txtmap3 = urwid.AttrMap(txtbox3, 'card_hd')
+# txtmap4 = urwid.AttrMap(txtbox4, 'card_sc')
 
-padding1 = urwid.Padding(txtmap1)
-padding2 = urwid.Padding(txtmap2)
-padding3 = urwid.Padding(txtmap3)
-padding4 = urwid.Padding(txtmap4)
+padding1 = urwid.Padding(txtbox1)
+padding2 = urwid.Padding(txtbox2)
+padding3 = urwid.Padding(txtbox3)
+padding4 = urwid.Padding(txtbox4)
 
 filler1 = urwid.Filler(padding1, valign='top')
 filler2 = urwid.Filler(padding2, valign='top')
 filler3 = urwid.Filler(padding3, valign='top')
 filler4 = urwid.Filler(padding4, valign='top')
 
+txtmap1 = urwid.AttrMap(txtbox1, 'card_hd')
+txtmap2 = urwid.AttrMap(txtbox2, 'card_sc')
+txtmap3 = urwid.AttrMap(txtbox3, 'card_hd')
+txtmap4 = urwid.AttrMap(txtbox4, 'card_sc')
+
 # linebox1 = urwid.LineBox(filler1, tlcorner='╔', trcorner='╗', blcorner='╚', brcorner='╝', tline='═', bline='═', lline='║', rline='║')
 # linebox2 = urwid.LineBox(filler2, tlcorner='╔', trcorner='╗', blcorner='╚', brcorner='╝', tline='═', bline='═', lline='║', rline='║')
 # linebox3 = urwid.LineBox(filler3, tlcorner='╔', trcorner='╗', blcorner='╚', brcorner='╝', tline='═', bline='═', lline='║', rline='║')
 # linebox4 = urwid.LineBox(filler4, tlcorner='╔', trcorner='╗', blcorner='╚', brcorner='╝', tline='═', bline='═', lline='║', rline='║')
 
-linebox1 = urwid.LineBox(filler1, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
-linebox2 = urwid.LineBox(filler2, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
-linebox3 = urwid.LineBox(filler3, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
-linebox4 = urwid.LineBox(filler4, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
+linebox1 = urwid.LineBox(txtmap1, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
+linebox2 = urwid.LineBox(txtmap2, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
+linebox3 = urwid.LineBox(txtmap3, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
+linebox4 = urwid.LineBox(txtmap4, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
 
 lineboxmap1 = urwid.AttrMap(linebox1, 'card_border_hd')
 lineboxmap2 = urwid.AttrMap(linebox2, 'card_border_sc')
