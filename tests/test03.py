@@ -10,8 +10,8 @@ palette = [
     ('background', 'white', 'black'),
     ('card_hd', 'light red', 'light gray'),
     ('card_sc', 'black', 'light gray'),
-    ('card_border_hd', 'light red', 'black'),
-    ('card_border_sc', 'black', 'black')
+    ('card_border_hd', 'light red', 'light gray'),
+    ('card_border_sc', 'black', 'light gray')
 ]
 
 # palette = [
