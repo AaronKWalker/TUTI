@@ -6,10 +6,17 @@ def exit_on_q(key):
         raise urwid.ExitMainLoop()
 
 
+# palette = [
+#     ('background', 'white', 'black'),
+#     ('card_hd', 'light red', 'light gray'),
+#     ('card_sc', 'black', 'light gray'),
+#     ('card_border', 'white', 'light gray')
+# ]
+
 palette = [
-    ('background', 'white', 'black'),
-    ('card_hd', 'light red', 'light gray'),
-    ('card_sc', 'black', 'light gray'),
+    ('background', 'white', '#afaf00'),
+    ('card_hd', 'light red', '#afaf00'),
+    ('card_sc', 'black', '#afaf00'),
     ('card_border', 'white', 'light gray')
 ]
 
