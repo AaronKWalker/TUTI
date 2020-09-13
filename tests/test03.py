@@ -6,19 +6,20 @@ def exit_on_q(key):
         raise urwid.ExitMainLoop()
 
 
+palette = [
+    ('background', 'white', 'black'),
+    ('card_hd', 'light red', 'light gray'),
+    ('card_sc', 'black', 'light gray'),
+    ('card_border_hd', 'light red', 'black'),
+    ('card_border_sc', 'black', 'black')
+]
+
 # palette = [
-#     ('background', 'white', 'black'),
-#     ('card_hd', 'light red', 'light gray'),
-#     ('card_sc', 'black', 'light gray'),
+#     ('background', 'white', '', '', '', '#afaf00'),
+#     ('card_hd', 'light red',  'dark red'),
+#     ('card_sc', 'black',  '', '', '', '#afaf00'),
 #     ('card_border', 'white', 'light gray')
 # ]
-
-palette = [
-    ('background', 'white', '', '', '', '#afaf00'),
-    ('card_hd', 'light red',  'dark red'),
-    ('card_sc', 'black',  '', '', '', '#afaf00'),
-    ('card_border', 'white', 'light gray')
-]
 
 hearts = {
     'ace': {'value': 'A', 'suit': '♥'},
@@ -122,10 +123,10 @@ linebox2 = urwid.LineBox(filler2, tlcorner='\u256d', trcorner='\u256e', blcorner
 linebox3 = urwid.LineBox(filler3, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
 linebox4 = urwid.LineBox(filler4, tlcorner='\u256d', trcorner='\u256e', blcorner='\u2570', brcorner='\u256f', tline='\u2500', bline='\u2500', lline='\u2502', rline='\u2502')
 
-lineboxmap1 = urwid.AttrMap(linebox1, 'card_hd')
-lineboxmap2 = urwid.AttrMap(linebox2, 'card_sc')
-lineboxmap3 = urwid.AttrMap(linebox3, 'card_hd')
-lineboxmap4 = urwid.AttrMap(linebox4, 'card_sc')
+lineboxmap1 = urwid.AttrMap(linebox1, 'card_border_hd')
+lineboxmap2 = urwid.AttrMap(linebox2, 'card_border_sc')
+lineboxmap3 = urwid.AttrMap(linebox3, 'card_border_hd')
+lineboxmap4 = urwid.AttrMap(linebox4, 'card_border_sc')
 
 borderpadding1 = urwid.Padding(lineboxmap1, width=15, left=1, right=1)
 borderpadding2 = urwid.Padding(lineboxmap2, width=15, left=1, right=1)
