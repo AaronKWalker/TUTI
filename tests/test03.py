@@ -7,11 +7,11 @@ def exit_on_q(key):
 
 
 palette = [
-    ('background', 'white', 'black'),
-    ('card_hd', 'light red', 'black'),
-    ('card_sc', 'light gray', 'black'),
-    ('card_border_hd', 'light red', 'black'),
-    ('card_border_sc', 'light gray', 'black')
+    ('background', 'white', 'light gray'),
+    ('card_hd', 'light red', 'light gray'),
+    ('card_sc', 'light gray', 'light gray'),
+    ('card_border_hd', 'light red', 'light gray'),
+    ('card_border_sc', 'black', 'light gray')
 ]
 
 # palette = [
