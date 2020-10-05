@@ -12,9 +12,10 @@ items = api.state['items']
 
 
 pprint.pprint(items)
+print('================================================')
 
 
-pprint.pprint('! Items Length: ' + len(items))
+pprint.pprint('! Items Length: ' + str(len(items)))
 
 for item in items:
     # pprint.pprint(item, indent=4)
