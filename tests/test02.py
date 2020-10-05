@@ -31,7 +31,7 @@ for item in items:
     pprint.pprint(item['content'])
     pprint.pprint(item['id'])
     pprint.pprint(item['checked'])
-    pprint.pprint(item['date_complete'])
+    pprint.pprint(item['date_completed'])
     pprint.pprint(item['is_deleted'])
     pprint.pprint(item['labels'])
     pprint.pprint(item['parent_id'])
