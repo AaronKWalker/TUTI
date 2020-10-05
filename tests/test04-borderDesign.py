@@ -95,7 +95,7 @@ brc = u'\u2620'.encode('utf-8')
 
 main_pile = urwid.Pile([padding1, div_padding, padding2])
 main_filler = urwid.Filler(main_pile, valign='top', top=1)
-main_linebox = urwid.LineBox(main_filler, 'TEST 01', title_align='left', tlcorner=tlc, trcorner=trc, blcorner=blc,brcorner=brc, tline='═', bline='═', lline='║', rline='║')
+main_linebox = urwid.LineBox(main_filler, 'TEST 01', title_align='left', tlcorner=tlc, trcorner=trc, blcorner=blc,brcorner=brc, tline='═', bline='═', lline='│', rline='║')
 main_map = urwid.AttrMap(main_linebox, 'bg')
 
 loop = urwid.MainLoop(main_map, palette2, unhandled_input=exit_on_q)
