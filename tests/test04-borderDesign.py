@@ -88,7 +88,7 @@ div_padding = urwid.Padding(div_map, left=10, right=3)
 # blc = u'\u2570'.encode('utf-8')
 # brc = u'\u256F'.encode('utf-8')
 
-tlc = u'\u2169\u2169\u2164\u2160\u2160'.encode('utf-8')
+tlc = u'\u2469'.encode('utf-8')
 trc = u'\u2620'.encode('utf-8')
 blc = u'\u2620'.encode('utf-8')
 brc = u'\u2620'.encode('utf-8')
