@@ -31,20 +31,32 @@ for item in items:
     pprint.pprint(item['content'])
     pprint.pprint(item['id'])
     pprint.pprint(item['checked'])
+    pprint.pprint(item['child_order'])
     pprint.pprint(item['date_completed'])
+    pprint.pprint(item['due'])
     pprint.pprint(item['is_deleted'])
     pprint.pprint(item['labels'])
     pprint.pprint(item['parent_id'])
     pprint.pprint(item['priority'])
     pprint.pprint(item['project_id'])
+    print('')
 
 print('\n== LABELS ===================================================')
 for label in lables:
-    pprint.pprint(label, indent=4)
+    # pprint.pprint(label, indent=4)
+    pprint.pprint(label['name'])
+    pprint.pprint(label['id'])
+    pprint.pprint(label['color'])
+    print('')
 
 print('\n== PROJECTS =================================================')
 for project in projects:
-    pprint.pprint(project, indent=4)
+    # pprint.pprint(project, indent=4)
+    pprint.pprint(project['name'])
+    pprint.pprint(project['id'])
+    pprint.pprint(project['color'])
+    pprint.pprint(project['parent_id'])
+    print('')
 
 
 def exit_on_q(key):
