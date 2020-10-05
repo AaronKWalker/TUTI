@@ -25,7 +25,8 @@ sections = api.state['sections']
 #     pprint.pprint(filt, indent=4)
 
 print('\n== ITEMS ======================================================')
-pprint.pprint('!Items Length: ' + str(len(items)))
+pprint.pprint('Items Length: ' + str(len(items)))
+print('')
 for item in items:
     # pprint.pprint(item, indent=4)
     pprint.pprint(item['content'])
