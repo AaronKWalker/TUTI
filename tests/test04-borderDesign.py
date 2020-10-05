@@ -20,32 +20,32 @@ palette = [
 ]
 
 
-task_content = ['Wash bed sheets', 'Laundry', 'Find new job', 'Update Postman']
-task_due_date = ['12/25/2020', '11/27/2020', '10/10/2020', '']
-task_label = ['Chores', 'Chores', 'Job Search', 'Blocked']
-task_project = ['Personal', 'Personal', 'Personal', 'Professional']
+# task_content = ['Wash bed sheets', 'Laundry', 'Find new job', 'Update Postman']
+# task_due_date = ['12/25/2020', '11/27/2020', '10/10/2020', '']
+# task_label = ['Chores', 'Chores', 'Job Search', 'Blocked']
+# task_project = ['Personal', 'Personal', 'Personal', 'Professional']
 # tasks = [task_content, task_due_date, task_label, task_project]
 tasks = [
     {
-        content: 'Wash bed sheets',
-        due_date: '12/25/2020',
-        label: 'Chores',
-        project: 'Personal'
+        'content': 'Wash bed sheets',
+        'due_date': '12/25/2020',
+        'label': 'Chores',
+        'project': 'Personal'
     },{
-        content: 'Laundry',
-        due_date: '11/27/2020',
-        label: 'Chores',
-        project: 'Personal'
+        'content': 'Laundry',
+        'due_date': '11/27/2020',
+        'label': 'Chores',
+        'project': 'Personal'
     },{
-        content: 'Find new job',
-        due_date: '10/10/2020',
-        label: 'Job Search',
-        project: 'Personal'
+        'content': 'Find new job',
+        'due_date': '10/10/2020',
+        'label': 'Job Search',
+        'project': 'Personal'
     },{
-        content: 'Update Postman',
-        due_date: None,
-        label: 'Blocked',
-        project: 'Professional'
+        'content': 'Update Postman',
+        'due_date': None,
+        'label': 'Blocked',
+        'project': 'Professional'
     }
 ]
 
@@ -55,7 +55,7 @@ for task in tasks:
     label_text = urwid.Text(task['label'])
     project_text = urwid.Text(task['project'])
 
-    
+
 
 
 
