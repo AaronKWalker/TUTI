@@ -16,24 +16,27 @@ reminders = api.state['reminders']
 sections = api.state['sections']
 
 
-print('== STATES =====================================================')
-for state in states:
-    pprint.pprint(state, indent=4)
+# print('== STATES =====================================================')
+# for state in states:
+#     pprint.pprint(state, indent=4)
 
-print('\n== FILTERS ====================================================')
-for filt in filters:
-    pprint.pprint(filt, indent=4)
+# print('\n== FILTERS ====================================================')
+# for filt in filters:
+#     pprint.pprint(filt, indent=4)
 
 print('\n== ITEMS ======================================================')
 pprint.pprint('!Items Length: ' + str(len(items)))
 for item in items:
-    pprint.pprint(item, indent=4)
-    # print('++++++++++++++++++++++++++++++++++')
-    # pprint.pprint('Content: ' + item['content'], indent=4)
-    # pprint.pprint('Date Completed: ' + str(item['date_completed']), indent=4)
-    # pprint.pprint('Checked: ' + str(item['checked']), indent=4)
-    # # pprint.pprint('Due Date: ' + item['due']['date'], indent=4)
-    # print('////////////////////////////////////////////////////////////////////////////////////\n')
+    # pprint.pprint(item, indent=4)
+    pprint.pprint(item['content'])
+    pprint.pprint(item['id'])
+    pprint.pprint(item['checked'])
+    pprint.pprint(item['date_complete'])
+    pprint.pprint(item['is_deleted'])
+    pprint.pprint(item['labels'])
+    pprint.pprint(item['parent_id'])
+    pprint.pprint(item['priority'])
+    pprint.pprint(item['project_id'])
 
 print('\n== LABELS ===================================================')
 for label in lables:
