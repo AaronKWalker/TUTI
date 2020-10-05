@@ -1,4 +1,23 @@
 import urwid
+from todoist import TodoistAPI
+import pprint
+
+
+token = '739355c80161704a40ea7353eeb36c64925774fe'
+api = TodoistAPI(token)
+api.sync()
+items = api.state['items']
+
+pprint.pprint(len(items))
+
+for item in items:
+    # pprint.pprint(item, indent=4)
+    # print('++++++++++++++++++++++++++++++++++')
+    pprint.pprint('Content: ' + item['content'], indent=4)
+    pprint.pprint('Date Completed: ' + str(item['date_completed']), indent=4)
+    pprint.pprint('Checked: ' + str(item['checked']), indent=4)
+    # pprint.pprint('Due Date: ' + item['due']['date'], indent=4)
+    print('////////////////////////////////////////////////////////////////////////////////////\n')
 
 
 def exit_on_q(key):
@@ -86,9 +105,9 @@ div_padding = urwid.Padding(div_map, left=10, right=3)
 
 main_pile = urwid.Pile([padding1, div_padding, padding2])
 main_filler = urwid.Filler(main_pile, valign='top', top=1)
-main_linebox = urwid.LineBox(main_filler, 'TEST 01', title_align='left', tlcorner='╔', trcorner='╗', blcorner='╚',brcorner='╝', tline='═', bline='═', lline='║', rline='║')
+main_linebox = urwid.LineBox(main_filler, 'TEST 02', title_align='left', tlcorner='╔', trcorner='╗', blcorner='╚',brcorner='╝', tline='═', bline='═', lline='║', rline='║')
 main_map = urwid.AttrMap(main_linebox, 'bg')
 
 loop = urwid.MainLoop(main_map, palette2, unhandled_input=exit_on_q)
 loop.screen.set_terminal_properties(colors=256)
-loop.run()
+# loop.run()

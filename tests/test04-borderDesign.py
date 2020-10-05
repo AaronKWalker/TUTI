@@ -6,18 +6,8 @@ def exit_on_q(key):
         raise urwid.ExitMainLoop()
 
 
-palette1 = [
-    ('tl_txt_pal', 'light magenta', 'black'),
-    ('tr_txt_pal', 'light blue', 'black'),
-    ('bl_txt_pal', 'light cyan', 'black'),
-    ('br_txt_pal', 'white', 'black'),
-    ('top_outerbox', 'dark red', 'white'),
-    ('btm_outerbox', 'light cyan', 'brown'),
-    ('bg', 'light cyan', 'black'),
-    ('div', 'yellow', 'black')
-]
 
-palette2 = [
+palette = [
     ('tl_txt_pal', '', '', '', '#999', '#42ecf5'),
     ('tr_txt_pal', '', '', '', '#850309', '#e0da14'),
     ('bl_txt_pal', '', '', '', '#000', '#f5af18'),
@@ -83,12 +73,21 @@ main_div = urwid.Divider('_', bottom=1)
 div_map = urwid.AttrMap(main_div, 'div')
 div_padding = urwid.Padding(div_map, left=10, right=3)
 
+# tlc = u'\u256D'.encode('utf-8')
+# trc = u'\u256E'.encode('utf-8')
+# blc = u'\u2570'.encode('utf-8')
+# brc = u'\u256F'.encode('utf-8')
+
+tlc = u'\u2469'.encode('utf-8')
+trc = u'\u2620'.encode('utf-8')
+blc = u'\u2620'.encode('utf-8')
+brc = u'\u2620'.encode('utf-8')
 
 main_pile = urwid.Pile([padding1, div_padding, padding2])
 main_filler = urwid.Filler(main_pile, valign='top', top=1)
-main_linebox = urwid.LineBox(main_filler, 'TEST 01', title_align='left', tlcorner='╔', trcorner='╗', blcorner='╚',brcorner='╝', tline='═', bline='═', lline='║', rline='║')
+main_linebox = urwid.LineBox(main_filler, 'TEST 01', title_align='left', tlcorner=tlc, trcorner=trc, blcorner=blc,brcorner=brc, tline='═', bline='═', lline='│', rline='║')
 main_map = urwid.AttrMap(main_linebox, 'bg')
 
-loop = urwid.MainLoop(main_map, palette2, unhandled_input=exit_on_q)
+loop = urwid.MainLoop(main_map, palette, unhandled_input=exit_on_q)
 loop.screen.set_terminal_properties(colors=256)
 loop.run()
