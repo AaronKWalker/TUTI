@@ -20,11 +20,11 @@ print('== STATES =====================================================')
 for state in states:
     pprint.pprint(state, indent=4)
 
-print('== FILTERS ====================================================')
+print('\n== FILTERS ====================================================')
 for filt in filters:
     pprint.pprint(filt, indent=4)
 
-print('== ITEMS ======================================================')
+print('\n== ITEMS ======================================================')
 pprint.pprint('!Items Length: ' + str(len(items)))
 for item in items:
     pprint.pprint(item, indent=4)
@@ -35,11 +35,11 @@ for item in items:
     # # pprint.pprint('Due Date: ' + item['due']['date'], indent=4)
     # print('////////////////////////////////////////////////////////////////////////////////////\n')
 
-print('== LABELS ===================================================')
+print('\n== LABELS ===================================================')
 for label in lables:
     pprint.pprint(label, indent=4)
 
-print('== PROJECTS =================================================')
+print('\n== PROJECTS =================================================')
 for project in projects:
     pprint.pprint(project, indent=4)
 
