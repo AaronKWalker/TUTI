@@ -7,11 +7,13 @@ import pprint
 token = config.todoist_api_key
 api = TodoistAPI(token)
 api.sync()
-state = api.state
+states = api.state
 items = api.state['items']
 
 
-pprint.pprint(items)
+for state in states:
+    pprint.pprint(state)
+    print('')
 print('================================================')
 
 
