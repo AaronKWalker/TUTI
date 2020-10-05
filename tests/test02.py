@@ -1,9 +1,10 @@
+import config
 import urwid
 from todoist import TodoistAPI
 import pprint
 
 
-token = '739355c80161704a40ea7353eeb36c64925774fe'
+token = config.todoist_api_key
 api = TodoistAPI(token)
 api.sync()
 items = api.state['items']
