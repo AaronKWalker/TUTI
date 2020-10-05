@@ -8,25 +8,40 @@ token = config.todoist_api_key
 api = TodoistAPI(token)
 api.sync()
 states = api.state
+filters = api.state['filters']
 items = api.state['items']
+lables = api.state['labels']
+projects = api.state['projects']
+reminders = api.state['reminders']
+sections = api.state['sections']
 
 
+print('== STATES =====================================================')
 for state in states:
-    pprint.pprint(state)
-    print('')
-print('================================================')
+    pprint.pprint(state, indent=4)
 
+print('== FILTERS ====================================================')
+for filt in filters:
+    pprint.pprint(filt, indent=4)
 
-pprint.pprint('! Items Length: ' + str(len(items)))
-
+print('== ITEMS ======================================================')
+pprint.pprint('!Items Length: ' + str(len(items)))
 for item in items:
     pprint.pprint(item, indent=4)
-    print('++++++++++++++++++++++++++++++++++')
+    # print('++++++++++++++++++++++++++++++++++')
     # pprint.pprint('Content: ' + item['content'], indent=4)
     # pprint.pprint('Date Completed: ' + str(item['date_completed']), indent=4)
     # pprint.pprint('Checked: ' + str(item['checked']), indent=4)
     # # pprint.pprint('Due Date: ' + item['due']['date'], indent=4)
-    print('////////////////////////////////////////////////////////////////////////////////////\n')
+    # print('////////////////////////////////////////////////////////////////////////////////////\n')
+
+print('== LABELS ===================================================')
+for label in lables:
+    pprint.pprint(label, indent=4)
+
+print('== PROJECTS =================================================')
+for project in projects:
+    pprint.pprint(project, indent=4)
 
 
 def exit_on_q(key):
