@@ -20,12 +20,12 @@ print('================================================')
 pprint.pprint('! Items Length: ' + str(len(items)))
 
 for item in items:
-    # pprint.pprint(item, indent=4)
-    # print('++++++++++++++++++++++++++++++++++')
-    pprint.pprint('Content: ' + item['content'], indent=4)
-    pprint.pprint('Date Completed: ' + str(item['date_completed']), indent=4)
-    pprint.pprint('Checked: ' + str(item['checked']), indent=4)
-    # pprint.pprint('Due Date: ' + item['due']['date'], indent=4)
+    pprint.pprint(item, indent=4)
+    print('++++++++++++++++++++++++++++++++++')
+    # pprint.pprint('Content: ' + item['content'], indent=4)
+    # pprint.pprint('Date Completed: ' + str(item['date_completed']), indent=4)
+    # pprint.pprint('Checked: ' + str(item['checked']), indent=4)
+    # # pprint.pprint('Due Date: ' + item['due']['date'], indent=4)
     print('////////////////////////////////////////////////////////////////////////////////////\n')
 
 
