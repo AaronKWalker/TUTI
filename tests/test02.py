@@ -7,9 +7,14 @@ import pprint
 token = config.todoist_api_key
 api = TodoistAPI(token)
 api.sync()
+state = api.state
 items = api.state['items']
 
-pprint.pprint(len(items))
+
+pprint.pprint(items)
+
+
+pprint.pprint('! Items Length: ' + len(items))
 
 for item in items:
     # pprint.pprint(item, indent=4)
