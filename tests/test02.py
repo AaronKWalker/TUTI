@@ -110,4 +110,4 @@ main_map = urwid.AttrMap(main_linebox, 'bg')
 
 loop = urwid.MainLoop(main_map, palette2, unhandled_input=exit_on_q)
 loop.screen.set_terminal_properties(colors=256)
-loop.run()
+# loop.run()
