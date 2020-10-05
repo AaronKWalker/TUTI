@@ -51,7 +51,10 @@ tasks = [
 
 for task in tasks:
     content_text = urwid.Text(task['content'])
-    duedate_text = urwid.Text(task['due_date'])
+    if (task['due_date'] is None):
+        duedate_text = urwid.Text('None')
+    else:
+        duedate_text = urwid.Text(task['due_date'])
     label_text = urwid.Text(task['label'])
     project_text = urwid.Text(task['project'])
 
