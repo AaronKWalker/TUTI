@@ -8,15 +8,11 @@ def exit_on_q(key):
 
 
 palette = [
-    ('tl_txt_pal', '', '', '', '#999', '#42ecf5'),
-    ('tr_txt_pal', '', '', '', '#850309', '#e0da14'),
-    ('bl_txt_pal', '', '', '', '#000', '#f5af18'),
-    ('br_txt_pal', '', '', '', '#7fdb8b', '#410385'),
-    ('top_outerbox', 'dark red', 'white'),
-    ('btm_outerbox', 'light cyan', 'brown'),
-    ('main_linebox', '', '', '', '#F21', '#0b5'),
-    ('outermost_box', 'black', 'yellow'),
-    ('pile_pal', 'light gray', 'dark green')
+    ('content_pal', 'yellow', 'black', '', '', ''),
+    ('duedate_pal', 'light red', 'black', '', '', ''),
+    ('label_pal', 'yellow', 'black', '', '', ''),
+    ('project_pal', 'yellow', 'black', '', '', ''),
+    ('main_pal'), 'white', 'black', '', '', '')
 ]
 
 
@@ -49,6 +45,8 @@ tasks = [
     }
 ]
 
+task_pile = []
+
 for task in tasks:
     content_text = urwid.Text(task['content'])
     if (task['due_date'] is None):
@@ -58,74 +56,33 @@ for task in tasks:
     label_text = urwid.Text(task['label'])
     project_text = urwid.Text(task['project'])
 
-    content_textmap = urwid.AttrMap(content_text, '')
-    duedate_textmap = urwid.AttrMap(duedate_text, '')
-    label_textmap = urwid.AttrMap(label_text, '')
-    project_textmap = urwid.AttrMap(project_text, '')
+    content_textmap = urwid.AttrMap(content_text, 'content_pal')
+    duedate_textmap = urwid.AttrMap(duedate_text, 'duedate_pal')
+    label_textmap = urwid.AttrMap(label_text, 'label_pal')
+    project_textmap = urwid.AttrMap(project_text, 'project_pal')
 
-    duedate_pad = urwid.Padding(duedate_textmap, width=('relative', 50), left=8)
-    content_pad = urwid.Padding(content_textmap, width=('relative', 50), left=8, right=2)
-    label_pad = urwid.Padding(label_textmap, width=('relative', 50))
-    project_pad = urwid.Padding(project_textmap, width=('relative', 50))
+    duedate_pad = urwid.Padding(duedate_textmap, width=('relative', 20), left=8, right=3)
+    label_pad = urwid.Padding(label_textmap, width=('relative', 40), right=2)
+    project_pad = urwid.Padding(project_textmap, width=('relative', 40), right=2)
+    content_pad = urwid.Padding(content_textmap, left=8)
 
-    content_linebox = urwid.LineBox(content_pad, tlcorner='┌', trcorner='', blcorner='└',brcorner='', tline='─', bline='─', lline='│', rline='│')
+    duedate_linebox = urwid.LineBox(duedate_pad, tlcorner='', trcorner='┌', blcorner='┌',brcorner=u'\u256F'.encode('utf-8'), tline='', bline='─', lline='', rline='│')
+    label_linebox = urwid.LineBox(label_pad, tlcorner='', trcorner='', blcorner='',brcorner='', tline='─', bline='', lline='', rline='')
+    project_linebox = urwid.LineBox(project_pad, tlcorner='', trcorner='┐', blcorner='',brcorner='', tline='─', bline='', lline='', rline='│')
 
+    dlp_col = urwid.Columns([duedate_linebox, label_linebox, project_linebox])
+    
+    content_linebox = urwid.LineBox(content_pad, tlcorner='', trcorner='', blcorner='└',brcorner='┘', tline='', bline='─', lline='│', rline='│')
 
+    cdlp_pile = urwid.pile([dlp_col, content_linebox])
 
+    global task_pile
+    task_pile.append(cdlp_pile)
 
-# right_pile1 = urwid.Pile([tl_txtmap1, bl_txtmap1])
-# left_pile1 = urwid.Pile([tr_txtmap1, br_txtmap1])
+main_pile = urwid.Pile(task_pile)
+main_map = urwid.AttrMap(main_pile, 'main_pal')
 
-# column1 = urwid.Columns([right_pile1, left_pile1])
+loop = urwid.MainLoop(main_map, palette, unhandled_input=exit_on_q)
+loop.screen.set_terminal_properties(colors=256)
+loop.run()
 
-# padding1 = urwid.Padding(column1, left=10, right=3)
-
-
-
-
-
-
-# tl_txt2 = 'Top Left 2'
-# tr_txt2 = 'Top Right 2'
-# bl_txt2 = 'Bottom Left 2'
-# br_txt2 = 'Bottom Right 2'
-
-# tl_txtbox2 = urwid.Text(tl_txt2)
-# tr_txtbox2 = urwid.Text(tr_txt2)
-# bl_txtbox2 = urwid.Text(bl_txt2)
-# br_txtbox2 = urwid.Text(br_txt2)
-
-# tl_txtmap2 = urwid.AttrMap(tl_txtbox2, 'tl_txt_pal')
-# tr_txtmap2 = urwid.AttrMap(tr_txtbox2, 'tr_txt_pal')
-# bl_txtmap2 = urwid.AttrMap(bl_txtbox2, 'bl_txt_pal')
-# br_txtmap2 = urwid.AttrMap(br_txtbox2, 'br_txt_pal')
-
-# right_pile2 = urwid.Pile([tl_txtmap2, bl_txtmap2])
-# left_pile2 = urwid.Pile([tr_txtmap2, br_txtmap2])
-
-# column2 = urwid.Columns([right_pile2, left_pile2])
-
-# padding2 = urwid.Padding(column2, left=10, right=3)
-
-# main_div = urwid.Divider('_', bottom=1)
-# div_map = urwid.AttrMap(main_div, 'div')
-# div_padding = urwid.Padding(div_map, left=10, right=3)
-
-# # tlc = u'\u256D'.encode('utf-8')
-# # trc = u'\u256E'.encode('utf-8')
-# # blc = u'\u2570'.encode('utf-8')
-# # brc = u'\u256F'.encode('utf-8')
-
-# tlc = u'\u2469'.encode('utf-8')
-# trc = u'\u2620'.encode('utf-8')
-# blc = u'\u2620'.encode('utf-8')
-# brc = u'\u2620'.encode('utf-8')
-
-# main_pile = urwid.Pile([padding1, div_padding, padding2])
-# main_filler = urwid.Filler(main_pile, valign='top', top=1)
-# main_linebox = urwid.LineBox(main_filler, 'TEST 01', title_align='left', tlcorner=tlc, trcorner=trc, blcorner=blc,brcorner=brc, tline='═', bline='═', lline='│', rline='║')
-# main_map = urwid.AttrMap(main_linebox, 'bg')
-
-# loop = urwid.MainLoop(main_map, palette, unhandled_input=exit_on_q)
-# loop.screen.set_terminal_properties(colors=256)
-# loop.run()
