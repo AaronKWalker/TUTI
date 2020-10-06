@@ -56,11 +56,13 @@ for task in tasks:
     label_text = urwid.Text(task['label'])
     project_text = urwid.Text(task['project'])
 
+    # set text attribute map
     content_textmap = urwid.AttrMap(content_text, 'content_pal')
     duedate_textmap = urwid.AttrMap(duedate_text, 'duedate_pal')
     label_textmap = urwid.AttrMap(label_text, 'label_pal')
     project_textmap = urwid.AttrMap(project_text, 'project_pal')
 
+    # set padding
     duedate_pad = urwid.Padding(duedate_textmap, width=('relative', 20), left=8, right=3)
     label_pad = urwid.Padding(label_textmap, width=('relative', 40), right=2)
     project_pad = urwid.Padding(project_textmap, width=('relative', 40), right=2)
@@ -71,9 +73,12 @@ for task in tasks:
     project_linebox = urwid.LineBox(project_pad, tlcorner='', trcorner='┐', blcorner='',brcorner='', tline='─', bline='', lline='', rline='│')
 
     dlp_col = urwid.Columns([duedate_linebox, label_linebox, project_linebox])
+
     
     content_linebox = urwid.LineBox(content_pad, tlcorner='', trcorner='', blcorner='└',brcorner='┘', tline='', bline='─', lline='│', rline='│')
 
+    dlp_map = urwid.AttrMap(dlp_c, 'main_pal')
+    
     c_col = urwid.Columns([content_linebox])
 
     cdlp_pile = urwid.Pile([dlp_col, c_col])
@@ -81,9 +86,10 @@ for task in tasks:
     task_pile.append(cdlp_pile)
 
 main_pile = urwid.Pile(task_pile)
-main_map = urwid.AttrMap(main_pile, 'main_pal')
+main_filler = urwid.Filler(main_pile)
+main_map = urwid.AttrMap(main_filler, 'main_pal')
 
 loop = urwid.MainLoop(main_map, palette, unhandled_input=exit_on_q)
-loop.screen.set_terminal_properties(colors=256)
+# loop.screen.set_terminal_properties(colors=256)
 loop.run()
 
