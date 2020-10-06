@@ -76,7 +76,6 @@ for task in tasks:
 
     cdlp_pile = urwid.pile([dlp_col, content_linebox])
 
-    global task_pile
     task_pile.append(cdlp_pile)
 
 main_pile = urwid.Pile(task_pile)
