@@ -58,17 +58,20 @@ for task in tasks:
     label_text = urwid.Text(task['label'])
     project_text = urwid.Text(task['project'])
 
+    content_textmap = urwid.AttrMap(content_text, '')
+    duedate_textmap = urwid.AttrMap(duedate_text, '')
+    label_textmap = urwid.AttrMap(label_text, '')
+    project_textmap = urwid.AttrMap(project_text, '')
+
+    duedate_pad = urwid.Padding(duedate_textmap, width=('relative', 50), left=8)
+    content_pad = urwid.Padding(content_textmap, width=('relative', 50), left=8, right=2)
+    label_pad = urwid.Padding(label_textmap, width=('relative', 50))
+    project_pad = urwid.Padding(project_textmap, width=('relative', 50))
+
+    content_linebox = urwid.LineBox(content_pad, tlcorner='┌', trcorner='', blcorner='└',brcorner='', tline='─', bline='─', lline='│', rline='│')
 
 
 
-
-
-
-
-# tl_txtmap1 = urwid.AttrMap(tl_txtbox1, 'tl_txt_pal')
-# tr_txtmap1 = urwid.AttrMap(tr_txtbox1, 'tr_txt_pal')
-# bl_txtmap1 = urwid.AttrMap(bl_txtbox1, 'bl_txt_pal')
-# br_txtmap1 = urwid.AttrMap(br_txtbox1, 'br_txt_pal')
 
 # right_pile1 = urwid.Pile([tl_txtmap1, bl_txtmap1])
 # left_pile1 = urwid.Pile([tr_txtmap1, br_txtmap1])
@@ -123,6 +126,6 @@ for task in tasks:
 # main_linebox = urwid.LineBox(main_filler, 'TEST 01', title_align='left', tlcorner=tlc, trcorner=trc, blcorner=blc,brcorner=brc, tline='═', bline='═', lline='│', rline='║')
 # main_map = urwid.AttrMap(main_linebox, 'bg')
 
-loop = urwid.MainLoop(main_map, palette, unhandled_input=exit_on_q)
-loop.screen.set_terminal_properties(colors=256)
-loop.run()
+# loop = urwid.MainLoop(main_map, palette, unhandled_input=exit_on_q)
+# loop.screen.set_terminal_properties(colors=256)
+# loop.run()
