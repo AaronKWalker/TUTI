@@ -67,21 +67,25 @@ for task in tasks:
     label_pad = urwid.Padding(label_textmap, width=('relative', 40), right=2)
     project_pad = urwid.Padding(project_textmap, width=('relative', 40), right=2)
     content_pad = urwid.Padding(content_textmap, left=8)
-
+    
+    # dlp section
     duedate_linebox = urwid.LineBox(duedate_pad, tlcorner='', trcorner='┌', blcorner='┌',brcorner=u'\u256F'.encode('utf-8'), tline='', bline='─', lline='', rline='│')
     label_linebox = urwid.LineBox(label_pad, tlcorner='', trcorner='', blcorner='',brcorner='', tline='─', bline='', lline='', rline='')
     project_linebox = urwid.LineBox(project_pad, tlcorner='', trcorner='┐', blcorner='',brcorner='', tline='─', bline='', lline='', rline='│')
 
     dlp_col = urwid.Columns([duedate_linebox, label_linebox, project_linebox])
 
+    dlp_map = urwid.AttrMap(dlp_col, 'main_pal')
     
+    # content section
     content_linebox = urwid.LineBox(content_pad, tlcorner='', trcorner='', blcorner='└',brcorner='┘', tline='', bline='─', lline='│', rline='│')
-
-    dlp_map = urwid.AttrMap(dlp_c, 'main_pal')
-    
+  
     c_col = urwid.Columns([content_linebox])
 
-    cdlp_pile = urwid.Pile([dlp_col, c_col])
+    c_map = urwid.AttrMap(c_col, 'main_pal')
+
+    # bring it all together
+    cdlp_pile = urwid.Pile([dlp_map, c_map])
 
     task_pile.append(cdlp_pile)
 
