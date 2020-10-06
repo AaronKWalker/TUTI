@@ -12,7 +12,7 @@ palette = [
     ('duedate_pal', 'light red', 'black', '', '', ''),
     ('label_pal', 'yellow', 'black', '', '', ''),
     ('project_pal', 'yellow', 'black', '', '', ''),
-    ('main_pal'), 'white', 'black', '', '', '')
+    ('main_pal', 'white', 'black', '', '', '')
 ]
 
 
