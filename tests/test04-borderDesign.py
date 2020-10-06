@@ -74,7 +74,7 @@ for task in tasks:
     
     content_linebox = urwid.LineBox(content_pad, tlcorner='', trcorner='', blcorner='└',brcorner='┘', tline='', bline='─', lline='│', rline='│')
 
-    c_col = urwid.Colums([content_linebox])
+    c_col = urwid.Columns([content_linebox])
 
     cdlp_pile = urwid.Pile([dlp_col, c_col])
 
