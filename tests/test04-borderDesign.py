@@ -70,8 +70,8 @@ for task in tasks:
     
     # dlp section
     duedate_linebox = urwid.LineBox(duedate_pad, tlcorner='', trcorner='┌', blcorner='┌',brcorner=u'\u256F'.encode('utf-8'), tline='', bline='─', lline='', rline='│')
-    label_linebox = urwid.LineBox(label_pad, tlcorner='', trcorner='', blcorner='',brcorner='', tline='─', bline='', lline='', rline='')
-    project_linebox = urwid.LineBox(project_pad, tlcorner='', trcorner='┐', blcorner='',brcorner='', tline='─', bline='', lline='', rline='│')
+    label_linebox = urwid.LineBox(label_pad, tlcorner='─', trcorner='', blcorner='',brcorner='', tline='─', bline='', lline='', rline='')
+    project_linebox = urwid.LineBox(project_pad, tlcorner='─', trcorner='┐', blcorner='',brcorner='', tline='─', bline='', lline='', rline='│')
 
     dlp_col = urwid.Columns([duedate_linebox, label_linebox, project_linebox])
 
